@@ -11,11 +11,11 @@
         <el-form-item label="向量IV">
           <el-input v-model="form.iv" placeholder="向量IV"></el-input>
         </el-form-item>
-        <el-form-item label="加密/解密结果">
+        <el-form-item label="加密/解密结果" style="margin-bottom:0 !important;">
           <el-input v-model="form.result" placeholder="加密/解密结果" disabled type="textarea" :rows="6" resize='none'></el-input>
         </el-form-item>
       </el-col>
-      <el-col :span="6">
+      <el-col :span="6" style="display: flex;flex-wrap: wrap;justify-content: center;">
         <el-form-item label="加密/解密内容数据格式">
           <el-select v-model="form.dataType">
             <el-option label="文本（解密为Base64）" value="TEXT" />
@@ -43,10 +43,10 @@
             <el-option label="CTR" value="CTR" />
           </el-select>
         </el-form-item>
-        <el-button type="primary" class="bu1" @click="encrypt()">加密</el-button>
+        <el-button type="primary" class="bu" @click="encrypt()">加密</el-button>
         <el-button type="primary" class="bu" @click="decrypt()">解密</el-button>
-        <el-button type="" @click="copyData()" class="bu">复制结果</el-button>
-        <el-button type="" @click="clear()" class="bu">清空</el-button> 
+        <el-button @click="copyData()" class="bu">复制结果</el-button>
+        <el-button @click="clear()" class="bu" style="margin-bottom:0 !important;">清空</el-button> 
       </el-col>
     </el-row>
   </el-form>
@@ -102,16 +102,11 @@ function clear() {
 </script>
 
 <style lang="less" scoped>
-.bu1 {
-  float: center;
-  width: 200px;
-  margin-top: 15px;
-}
+
 .bu {
-  float: center;
   width: 200px;
-  margin-top: 15px;
-  margin-left: 0px;
+  margin-top: 10px !important;
+  margin-left: 0 !important;
 }
 
 // .ep-button--primary {

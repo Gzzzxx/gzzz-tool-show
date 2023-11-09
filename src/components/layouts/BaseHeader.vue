@@ -3,7 +3,7 @@
     <el-menu-item index="1" @click="handleChange(1)">
       <img
         style="width: 100px;height: 100%;min-height: 56px;"
-        src="../../img/logo.svg"
+        src="../../images/logo.svg"
         alt="logo"
       />
     </el-menu-item>
