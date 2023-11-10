@@ -43,12 +43,12 @@ const handleChange = (_val: any) => {
 useDark();
 
 const toggleTheme = (event: MouseEvent) => {
+  
   const x = event.clientX
   const y = event.clientY
   const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
 
   let isDark: boolean
-  isDark = false
 
   // @ts-ignore
   const transition = document.startViewTransition(() => {
