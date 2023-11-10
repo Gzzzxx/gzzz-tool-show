@@ -1,8 +1,9 @@
 <template>
-  <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false" style="padding-left: 5%;padding-right: 5%;">
+  <el-affix>
+    <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false" style="padding-left: 5%;padding-right: 5%;" >
     <el-menu-item index="1" @click="handleChange(1)">
       <img
-        style="width: 100px;height: 100%;min-height: 56px;"
+        style="width: 100px;height: 100%;min-height: 58px;"
         src="../../images/logo.svg"
         alt="logo"
       />
@@ -20,6 +21,8 @@
       </button>
     </el-menu-item>
   </el-menu>
+  </el-affix>
+
 </template>
 
 <script lang="ts" setup>

@@ -1,5 +1,5 @@
 <template>
-  <div style="padding: 0px 19% 0px 19%;">
+  <div style="padding: 0px 21% 0px 21%;">
     <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
       <el-tab-pane label="SM4" name="first">
         <detail/>
