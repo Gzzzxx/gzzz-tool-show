@@ -81,6 +81,54 @@
         </el-card>
       </el-col>
     </el-row>
+    <el-row style="margin:20px 0 20px 0px;text-align: left;">
+      <el-col :span="24">
+        <el-card class="box-card">
+          <el-text tag="b">相关概念</el-text>
+          <br/>
+          <el-text class="text_left">
+            在
+            <el-text type="primary">密码学</el-text>
+            中，
+            <el-text tag="b">分组加密</el-text>
+            （英语：
+            <el-text tag="b">Block cipher</el-text>
+            ），又称
+            <el-text tag="b">分块加密</el-text>
+            或
+            <el-text tag="b">块密码</el-text>
+            ，是一种对称密钥算法。它将明文分成多个等长的模块（block），使用确定的算法和
+            <el-text type="primary">对称密钥</el-text>
+            对每组分别加密解密。分组加密是极其重要的加密协议组成，其中典型的如
+            <el-text type="primary">DES</el-text>
+            和
+            <el-text type="primary">AES</el-text>
+            作为美国政府核定的标准加密算法，应用领域从电子邮件加密到银行交易转帐，非常广泛。
+          </el-text>
+          <br/>
+          <el-text class="text_left">
+            国密即国家密码局认定的国产密码算法。主要有SM1，SM2，SM3，SM4。密钥长度和分组长度均为128位。
+          </el-text>
+          <br/>
+          <el-text class="text_left">
+            SM1为对称加密。其加密强度与AES相当。该算法不公开，调用该算法时，需要通过加密芯片的接口进行调用。
+          </el-text>
+          <br/>
+          <el-text class="text_left">
+            SM2为非对称加密，基于ECC。该算法已公开。由于该算法基于ECC，故其签名速度与秘钥生成速度都快于RSA。ECC 256位（SM2采用的就是ECC 256位的一种）安全强度比RSA 2048位高，但运算速度快于RSA。
+          </el-text>
+          <br/>
+          <el-text class="text_left">
+            SM3消息摘要。可以用MD5作为对比理解。该算法已公开。校验结果为256位。
+          </el-text>
+          <br/>
+          <el-text class="text_left">
+            SM4无线局域网标准的分组数据算法。对称加密，密钥长度和分组长度均为128位。
+          </el-text>
+          <br/>
+        </el-card>
+      </el-col>
+    </el-row>
   </el-form>
 </template>
 
@@ -137,7 +185,7 @@ function clear() {
 
 .bu {
   width: 100%;
-  margin-top: 15px !important;
+  margin-top: 14px !important;
   margin-left: 0 !important;
 }
 
