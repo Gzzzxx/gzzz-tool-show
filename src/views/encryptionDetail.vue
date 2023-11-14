@@ -149,7 +149,13 @@ const form = reactive({
   mode: 'ECB'
 })
 
+
+const obj = defineProps({
+  algorithm : String
+})
+
 function encrypt() {
+  form.algorithmName = obj.algorithm;
   sm4Encrypt(form).then((res) => {
     if (res.code == 200) {
       form.result = res.data.data
