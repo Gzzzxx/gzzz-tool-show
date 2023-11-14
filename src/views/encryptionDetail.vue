@@ -165,6 +165,7 @@ function encrypt() {
 }
 
 function decrypt() {
+  form.algorithmName = obj.algorithm;
   sm4Decrypt(form).then((res) => {
     if (res.code == 200) {
       form.result = res.data.data
