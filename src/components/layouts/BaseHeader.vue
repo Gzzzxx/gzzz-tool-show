@@ -36,7 +36,7 @@ const handleChange = (_val: any) => {
     router.push("/");
   }
   if (_val == 2) {
-    router.push("/home");
+    router.push("/encryption");
   }  
 };
 
