@@ -10,7 +10,7 @@
       </el-menu-item>
       <div class="flex-grow" />
       <el-menu-item index="2" @click="handleChange(2)">加密/解密</el-menu-item>
-      <el-menu-item index="3" >JSON格式化</el-menu-item>
+      <el-menu-item index="3" @click="handleChange(3)">JSON格式化</el-menu-item>
       <el-menu-item index="4" >Base64转换</el-menu-item>
       <el-menu-item h="full">
         <button
@@ -37,7 +37,10 @@ const handleChange = (_val: any) => {
   }
   if (_val == 2) {
     router.push("/encryption");
-  }  
+  }
+  if (_val == 3) {
+    router.push("/format");
+  } 
 };
 
 useDark();
