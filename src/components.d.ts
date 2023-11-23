@@ -29,6 +29,8 @@ declare module 'vue' {
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTag: typeof import('element-plus/es')['ElTag']
     ElText: typeof import('element-plus/es')['ElText']
+    JsonNode: typeof import('./components/json/JsonNode.vue')['default']
+    JsonPreview: typeof import('./components/json/JsonPreview.vue')['default']
     Logos: typeof import('./components/Logos.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

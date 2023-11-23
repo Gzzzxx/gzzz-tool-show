@@ -134,7 +134,7 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue';
-import { sm4Encrypt , sm4Decrypt } from '../api/index.js'
+import { sm4Encrypt , sm4Decrypt } from '../../api/index.js'
 import { ElMessage } from 'element-plus'
 
 const form = reactive({

@@ -9,12 +9,12 @@ const routes = [
     {
         path: '/encryption',
         name: 'encryption',
-        component: () => import('../views/encryption.vue')
+        component: () => import('../views/encryption/encryption.vue')
     },
     {
         path: '/format',
         name: 'format',
-        component: () => import('../views/format.vue')
+        component: () => import('../views/json/format.vue')
     },
 ]
 export const router = createRouter({

@@ -1,0 +1,55 @@
+.editor {
+    text-align: left;
+  border-radius: 1rem;
+  height: 100%;
+  // max-height: calc(100vh - 100px);
+  // display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // margin: 2rem;
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+    // height: calc(100% - 5rem);
+    width: 100%;
+    > * {
+      width: 50%;
+    }
+    .json-editor {
+      display: flex;
+      flex-direction: column;
+      box-shadow: rgba(0, 0, 0, 0.2) 0 0 15px inset;
+
+      .tool-bar {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        border-bottom: 1px solid #ddd;
+        > * {
+          margin-left: 10px;
+        }
+      }
+
+      textarea {
+        padding: 1rem;
+        height: calc(100% - 2rem);
+        line-height: 1.8rem;
+        font-size: 0.9rem;
+        border: 1px solid #717171;
+        outline: none;
+        background: none;
+        resize: none;
+      }
+    }
+    .json-preview {
+      font-size: 0.9rem;
+      border: 1px solid #717171;
+      padding: 1rem;
+      height: calc(100% - 2rem - 2px);
+    }
+  }
+}
