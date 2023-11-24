@@ -16,6 +16,11 @@ const routes = [
         name: 'format',
         component: () => import('../views/json/format.vue')
     },
+    {
+        path: '/base64',
+        name: 'base64',
+        component: () => import('../views/base64/base64.vue')
+    }
 ]
 export const router = createRouter({
     history: createWebHashHistory(),

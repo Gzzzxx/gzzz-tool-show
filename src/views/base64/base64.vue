@@ -1,0 +1,172 @@
+
+import { formContextKey } from 'element-plus';
+<template>
+  <el-row>
+    <el-col :span="24">
+      <div style="float: left; margin-left: 20px">
+        <el-button class="bu" :icon="SwitchFilled" type="success" @click="encode()">编码</el-button>
+        <el-button class="bu" :icon="Brush" type="info" @click="decode()">解码</el-button>
+        <el-button class="bu" :icon="CopyDocument" @click="copyData()">复制</el-button>
+        <el-button class="bu" :icon="Delete" @click="clear()" >清空</el-button>
+      </div>
+    </el-col>
+  </el-row>
+  <el-row :gutter="20" style="margin:1rem 10px 0px 10px">
+    <el-col :span="12">
+      <el-input v-model="form.data" placeholder="编码/解码内容" type="textarea" :rows="8" resize='none'></el-input>
+    </el-col>
+    <el-col :span="12">
+      <el-input v-model="form.result" placeholder="编码/解码结果" type="textarea" :rows="8" disabled resize='none'></el-input>
+    </el-col>
+  </el-row>
+  <el-row :gutter="20" style="margin:1rem 10px 0px 10px;text-align: left">
+    <el-col :span="24">
+      <el-card>
+        <el-text size="large" tag="b">Base64 编码说明</el-text>
+        <br/>
+        <el-text type="primary">
+          Base64
+        </el-text>
+        <el-text>
+          是一种基于 64 个可打印字符来表示二进制数据的表示方法，由于 2^6=64，所以每 6 个比特为一个单元，对应某个可打印字符。
+        </el-text>
+        <br/>
+        <el-text type="primary">
+          Base64
+        </el-text>
+        <el-text>
+          常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括 MIME 的电子邮件及 XML 的一些复杂数据。
+        </el-text>
+        <br/>
+        <el-text>
+          <el-text type="primary">Base64</el-text>
+          编码要求把 3 个 8 位字节（3*8=24）转化为 4 个 6 位的字节（4*6=24），之后在 6 位的前面补两个 0，形成 8 位一个字节的形式。 如果剩下的字符不足 3 个字节，则用 0 填充，输出字符使用 =，因此编码后输出的文本末尾可能会出现 1 或 2 个 =。
+        </el-text>
+        <br/>
+        <el-text>
+          为了保证所输出的编码位可读字符，
+        </el-text>
+        <el-text type="primary">
+          Base64
+        </el-text>
+        <el-text>
+          制定了一个编码表，以便进行统一转换。编码表的大小为
+        </el-text>
+        <el-text type="primary">
+          2^6=64
+        </el-text>
+        <el-text>
+          ，这也是
+        </el-text>
+        <el-text type="primary">
+          Base64
+        </el-text>
+        <el-text>
+          名称的由来。
+        </el-text>
+        <br/>
+        <el-text>
+          在 
+        </el-text>
+        <el-text type="primary">
+          Base64
+        </el-text>
+        <el-text>
+          中的可打印字符包括字母
+        </el-text>
+        <el-text type="primary">
+          A-Z
+        </el-text>
+        <el-text>
+          、
+        </el-text>
+        <el-text type="primary">
+          a-z
+        </el-text>
+        <el-text>
+          、数字
+        </el-text>
+        <el-text type="primary">
+          0-9
+        </el-text>
+        <el-text>
+          ，这样共有 62 个字符，此外两个可打印符号在不同的系统中而不同。
+        </el-text>
+        <br/>
+        <el-text>
+          以下是 Base64 编码的基本步骤：
+        </el-text>
+        <br/>
+        <el-text>
+          <ul>
+            <li>将数据划分为 3 个字节一组（24位）。</li>
+            <li>将每个字节转换为 8 位二进制形式。</li>
+            <li>将 24 位数据按照 6 位一组进行划分，得到 4 个 6 位的组。</li>
+            <li>将每个 6 位的组转换为对应的 Base64 字符。</li>
+            <li>如果数据不足 3 字节，进行填充。</li>
+            <li>将所有转换后的 Base64 字符连接起来，形成最终的编码结果。</li>
+          </ul>
+        </el-text>
+        <el-text>
+          解码 Base64 编码的过程与编码相反，将每个 Base64 字符转换为对应的6位二进制值，然后将这些 6 位值组合成原始的二进制数据。
+        </el-text>
+        <br/>
+        <el-text>
+          Base64 编码具有以下特点：
+        </el-text>
+        <el-text>
+          <ul>
+            <li>编码后的数据长度总是比原始数据长约 1/3。</li>
+            <li>编码后的数据可以包含 A-Z、a-z、0-9 和两个额外字符的任意组合。</li>
+            <li>Base64 编码是一种可逆的编码方式，可以通过解码还原原始数据。</li>
+          </ul>
+        </el-text>
+      </el-card>
+    </el-col>
+  </el-row>
+</template>
+
+<script lang="ts" setup>
+import { reactive } from 'vue';
+import {SwitchFilled} from '@element-plus/icons-vue'
+import {Brush} from '@element-plus/icons-vue'
+import {CopyDocument} from '@element-plus/icons-vue'
+import {Delete} from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
+import { Base64 } from 'js-base64'
+
+const form = reactive({
+  data: '',
+  result: ''
+})
+
+function encode() {
+  form.result = Base64.encode(form.data);
+}
+
+function decode() {
+  form.result = Base64.decode(form.data);
+}
+
+function copyData() {
+  navigator.clipboard.writeText(form.result).then(() => {
+    ElMessage.success({message: '复制成功'})
+});
+}
+
+function clear() {
+  form.data = '';
+  form.result = '';
+}
+</script>
+
+
+<style lang="less" scoped>
+.bu {
+  width: 10px;
+}
+
+:deep(.ep-text) {
+  line-height: 24px;
+}
+</style>

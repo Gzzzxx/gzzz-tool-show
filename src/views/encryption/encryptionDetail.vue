@@ -226,7 +226,9 @@ function clear() {
 :deep(.ep-textarea__inner::-webkit-scrollbar-track) {
     background-color: transparent ;
 }
-
+:deep(.ep-text) {
+  line-height: 24px;
+}
 
 </style>
 

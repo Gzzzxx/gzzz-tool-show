@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import './axios/index.js'
-
+import './assets/font/font.css'
 // import "~/styles/element/index.scss";
 
 // import ElementPlus from "element-plus";
