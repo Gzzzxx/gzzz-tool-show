@@ -40,7 +40,7 @@ watch(props, (newValue) => {
 <style lang="scss" scoped>
 .preview-container {
     text-align: left;
-    line-height: 1.8rem;
+    line-height: 1.6rem;
     overflow-y: auto;
     word-wrap: break-word;
 }
