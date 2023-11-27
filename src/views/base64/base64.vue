@@ -121,6 +121,27 @@ import { formContextKey } from 'element-plus';
             <li>Base64 编码是一种可逆的编码方式，可以通过解码还原原始数据。</li>
           </ul>
         </el-text>
+        <el-text size="large" tag="b">Base64 编码表</el-text>
+        <el-table
+          :data="tableData"
+          :span-method="objectSpanMethod"
+          border
+          stripe
+          show-header
+          style="width: 100%;font-color:red" 
+        >
+          <el-table-column label="码值" prop="1"/>
+          <el-table-column label="字符" prop="2"/>
+          <el-table-column width="120"/>
+          <el-table-column label="码值" prop="3"/>
+          <el-table-column label="字符" prop="4"/>
+          <el-table-column width="120"/>
+          <el-table-column label="码值" prop="5"/>
+          <el-table-column label="字符" prop="6"/>
+          <el-table-column width="120"/>
+          <el-table-column label="码值" prop="7"/>
+          <el-table-column label="字符" prop="8"/>
+        </el-table>
       </el-card>
     </el-col>
   </el-row>
@@ -134,6 +155,7 @@ import {CopyDocument} from '@element-plus/icons-vue'
 import {Delete} from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 import { Base64 } from 'js-base64'
+import type { TableColumnCtx } from 'element-plus'
 
 const form = reactive({
   data: '',
@@ -158,6 +180,65 @@ function clear() {
   form.data = '';
   form.result = '';
 }
+
+interface Table {
+  1: string
+  2: string
+  3: string
+  4: string
+  5: string
+  6: string
+  7: string
+  8: string
+}
+
+interface SpanMethodProps {
+  row: Table
+  column: TableColumnCtx<Table>
+  rowIndex: number
+  columnIndex: number
+}
+
+const objectSpanMethod = ({
+  row,
+  column,
+  rowIndex,
+  columnIndex,
+}: SpanMethodProps) => {
+  if ((columnIndex + 1) % 3 === 0) {
+    if (rowIndex === 0) {
+      
+      return {
+        rowspan: 16,
+        colspan: 1,
+      }
+    } else {
+      return {
+        rowspan: 0,
+        colspan: 0,
+      }
+    }
+  }
+}
+
+const tableData: Table[] = [
+  {1: '0',2: 'A',3: '16',4: 'Q',5: '32',6: 'g',7: '48',8: 'w'},
+  {1: '1',2: 'B',3: '17',4: 'R',5: '33',6: 'h',7: '49',8: 'x'},
+  {1: '2',2: 'C',3: '18',4: 'S',5: '34',6: 'i',7: '50',8: 'y'},
+  {1: '3',2: 'D',3: '19',4: 'T',5: '35',6: 'j',7: '51',8: 'z'},
+  {1: '4',2: 'E',3: '20',4: 'U',5: '36',6: 'k',7: '52',8: '0'},
+  {1: '5',2: 'F',3: '21',4: 'V',5: '37',6: 'l',7: '53',8: '1'},
+  {1: '6',2: 'G',3: '22',4: 'W',5: '38',6: 'm',7: '54',8: '2'},
+  {1: '7',2: 'H',3: '23',4: 'X',5: '39',6: 'n',7: '55',8: '3'},
+  {1: '8',2: 'I',3: '24',4: 'Y',5: '40',6: 'o',7: '56',8: '4'},
+  {1: '9',2: 'J',3: '25',4: 'Z',5: '41',6: 'p',7: '57',8: '5'},
+  {1: '10',2: 'K',3: '26',4: 'a',5: '42',6: 'q',7: '58',8: '6'},
+  {1: '11',2: 'L',3: '27',4: 'b',5: '43',6: 'r',7: '59',8: '7'},
+  {1: '12',2: 'M',3: '28',4: 'c',5: '44',6: 's',7: '60',8: '8'},
+  {1: '13',2: 'N',3: '29',4: 'd',5: '45',6: 't',7: '61',8: '9'},
+  {1: '14',2: 'O',3: '30',4: 'e',5: '46',6: 'u',7: '62',8: '+'},
+  {1: '15',2: 'P',3: '31',4: 'f',5: '47',6: 'v',7: '63',8: '/'},
+]
 </script>
 
 
@@ -168,5 +249,10 @@ function clear() {
 
 :deep(.ep-text) {
   line-height: 24px;
+}
+
+:deep(.cell) {
+  color: #589EF8;
+  font-weight: 600;
 }
 </style>
