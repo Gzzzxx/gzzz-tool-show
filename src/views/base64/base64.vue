@@ -128,7 +128,7 @@ import { formContextKey } from 'element-plus';
           border
           stripe
           show-header
-          style="width: 100%;font-color:red" 
+          style="width: 100%;" 
         >
           <el-table-column label="码值" prop="1"/>
           <el-table-column label="字符" prop="2"/>
@@ -207,7 +207,6 @@ const objectSpanMethod = ({
 }: SpanMethodProps) => {
   if ((columnIndex + 1) % 3 === 0) {
     if (rowIndex === 0) {
-      
       return {
         rowspan: 16,
         colspan: 1,
@@ -240,7 +239,6 @@ const tableData: Table[] = [
   {1: '15',2: 'P',3: '31',4: 'f',5: '47',6: 'v',7: '63',8: '/'},
 ]
 </script>
-
 
 <style lang="less" scoped>
 .bu {
