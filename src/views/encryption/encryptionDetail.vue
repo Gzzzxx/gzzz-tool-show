@@ -75,9 +75,7 @@
             为固定的8比特输入8比特输出。
           </el-text>
           <br/>
-          <el-text class="text_left">
-            SM4.0中的指令长度被提升到大于64K（即64×1024）的水平，这是SM 3.0规格（渲染指令长度允许大于512）的128倍。
-          </el-text>
+          <el-text class="text_left">SM4.0中的指令长度被提升到大于64K（即64×1024）的水平，这是SM 3.0规格（渲染指令长度允许大于512）的128倍。</el-text>
         </el-card>
       </el-col>
     </el-row>
@@ -106,25 +104,15 @@
             作为美国政府核定的标准加密算法，应用领域从电子邮件加密到银行交易转帐，非常广泛。
           </el-text>
           <br/>
-          <el-text class="text_left">
-            国密即国家密码局认定的国产密码算法。主要有SM1，SM2，SM3，SM4。密钥长度和分组长度均为128位。
-          </el-text>
+          <el-text class="text_left">国密即国家密码局认定的国产密码算法。主要有SM1，SM2，SM3，SM4。密钥长度和分组长度均为128位。</el-text>
           <br/>
-          <el-text class="text_left">
-            SM1为对称加密。其加密强度与AES相当。该算法不公开，调用该算法时，需要通过加密芯片的接口进行调用。
-          </el-text>
+          <el-text class="text_left">SM1为对称加密。其加密强度与AES相当。该算法不公开，调用该算法时，需要通过加密芯片的接口进行调用。</el-text>
           <br/>
-          <el-text class="text_left">
-            SM2为非对称加密，基于ECC。该算法已公开。由于该算法基于ECC，故其签名速度与秘钥生成速度都快于RSA。ECC 256位（SM2采用的就是ECC 256位的一种）安全强度比RSA 2048位高，但运算速度快于RSA。
-          </el-text>
+          <el-text class="text_left">SM2为非对称加密，基于ECC。该算法已公开。由于该算法基于ECC，故其签名速度与秘钥生成速度都快于RSA。ECC 256位（SM2采用的就是ECC 256位的一种）安全强度比RSA 2048位高，但运算速度快于RSA。</el-text>
           <br/>
-          <el-text class="text_left">
-            SM3消息摘要。可以用MD5作为对比理解。该算法已公开。校验结果为256位。
-          </el-text>
+          <el-text class="text_left">SM3消息摘要。可以用MD5作为对比理解。该算法已公开。校验结果为256位。</el-text>
           <br/>
-          <el-text class="text_left">
-            SM4无线局域网标准的分组数据算法。对称加密，密钥长度和分组长度均为128位。
-          </el-text>
+          <el-text class="text_left">SM4无线局域网标准的分组数据算法。对称加密，密钥长度和分组长度均为128位。</el-text>
           <br/>
         </el-card>
       </el-col>
