@@ -108,37 +108,41 @@
         </div>
         <el-text>编码 “Man” 的结果为 TWFu，转换过程如下：</el-text>
         <el-table
-        :data="tableData1"
+        :data="tableDemoData"
+        :span-method="demoObjectSpanMethod"
         border
+        :show-header=false
         class="table_style"
+        :cell-style="{textAlign: 'center'}"
+        :header-cell-style="{'text-align': 'center'}"
         >
-          <el-table-column prop="1" label="文本"></el-table-column>
-          <el-table-column prop="2" label="M"></el-table-column>
-          <el-table-column prop="3" label="a"></el-table-column>
-          <el-table-column prop="4" label="n"></el-table-column>
-          <el-table-column prop="5" label="文本"></el-table-column>
-          <el-table-column prop="6" label="M"></el-table-column>
-          <el-table-column prop="7" label="a"></el-table-column>
-          <el-table-column prop="8" label="n"></el-table-column>
-          <el-table-column prop="9" label="文本"></el-table-column>
-          <el-table-column prop="10" label="M"></el-table-column>
-          <el-table-column prop="11" label="a"></el-table-column>
-          <el-table-column prop="12" label="n"></el-table-column>
-          <el-table-column prop="13" label="文本"></el-table-column>
-          <el-table-column prop="14" label="M"></el-table-column>
-          <el-table-column prop="15" label="a"></el-table-column>
-          <el-table-column prop="16" label="n"></el-table-column>
-          <el-table-column prop="17" label="文本"></el-table-column>
-          <el-table-column prop="18" label="M"></el-table-column>
-          <el-table-column prop="19" label="a"></el-table-column>
-          <el-table-column prop="20" label="n"></el-table-column>
-          <el-table-column prop="21" label="文本"></el-table-column>
-          <el-table-column prop="22" label="M"></el-table-column>
-          <el-table-column prop="23" label="a"></el-table-column>
-          <el-table-column prop="24" label="n"></el-table-column>
-          <el-table-column prop="25" label="文本"></el-table-column>
-          <el-table-column prop="26" label="M"></el-table-column>
-          <el-table-column prop="27" label="a"></el-table-column> 
+          <el-table-column prop="1" min-width="50px"/>
+          <el-table-column prop="2" min-width="50px"/>
+          <el-table-column prop="3" min-width="50px"/>
+          <el-table-column prop="4" min-width="50px"/>
+          <el-table-column prop="5" min-width="50px"/>
+          <el-table-column prop="6" min-width="50px"/>
+          <el-table-column prop="7" min-width="50px"/>
+          <el-table-column prop="8" min-width="50px"/>
+          <el-table-column prop="9" min-width="50px"/>
+          <el-table-column prop="10" min-width="50px"/>
+          <el-table-column prop="11" min-width="50px"/>
+          <el-table-column prop="12" min-width="50px"/>
+          <el-table-column prop="13" min-width="50px"/>
+          <el-table-column prop="14" min-width="50px"/>
+          <el-table-column prop="15" min-width="50px"/>
+          <el-table-column prop="16" min-width="50px"/>
+          <el-table-column prop="17" min-width="50px"/>
+          <el-table-column prop="18" min-width="50px"/>
+          <el-table-column prop="19" min-width="50px"/>
+          <el-table-column prop="20" min-width="50px"/>
+          <el-table-column prop="21" min-width="50px"/>
+          <el-table-column prop="22" min-width="50px"/>
+          <el-table-column prop="23" min-width="50px"/>
+          <el-table-column prop="24" min-width="50px"/>
+          <el-table-column prop="25" min-width="50px"/>
+          <el-table-column prop="26" min-width="50px"/>
+          <el-table-column prop="27" min-width="50px"/>
         </el-table> 
       </el-card>
     </el-col>
@@ -194,6 +198,13 @@ interface SpanMethodProps {
   columnIndex: number
 }
 
+interface DemoSpanMethodProps {
+  row: TableDemo
+  column: TableColumnCtx<TableDemo>
+  rowIndex: number
+  columnIndex: number
+}
+
 const objectSpanMethod = ({
   row,
   column,
@@ -215,6 +226,52 @@ const objectSpanMethod = ({
   }
 }
 
+const demoObjectSpanMethod = ({
+  row,
+  column,
+  rowIndex,
+  columnIndex,
+}: DemoSpanMethodProps) => {
+  
+    if (columnIndex === 0) {
+      return {
+        rowspan: 1,
+        colspan: 3,
+      }
+    }
+    if ((rowIndex === 0 || rowIndex === 1) && (columnIndex === 3 || columnIndex === 11 || columnIndex === 19)) {
+      return {
+        rowspan: 1,
+        colspan: 8,
+      }
+    }
+    if ((rowIndex === 0 || rowIndex === 1) && (columnIndex + 5) % 8 != 0) {
+      return {
+        rowspan: 0,
+        colspan: 0,
+      }
+    }
+    if (rowIndex === 2 && (columnIndex === 1 || columnIndex === 2)) {
+      return {
+        rowspan: 0,
+        colspan: 0,
+      }
+    }
+    if ((rowIndex === 3 || rowIndex === 4) && (columnIndex === 3 || columnIndex === 9 || columnIndex === 15 || columnIndex === 21)) {
+      return {
+        rowspan: 1,
+        colspan: 6,
+      }
+    }
+    if ((rowIndex === 3 || rowIndex === 4) && (columnIndex + 3) % 6 != 0) {
+      return {
+        rowspan: 0,
+        colspan: 0,
+      }
+    }
+  
+}
+
 const tableData: Table[] = [
   {1: '0',2: 'A',3: '16',4: 'Q',5: '32',6: 'g',7: '48',8: 'w'},
   {1: '1',2: 'B',3: '17',4: 'R',5: '33',6: 'h',7: '49',8: 'x'},
@@ -234,8 +291,12 @@ const tableData: Table[] = [
   {1: '15',2: 'P',3: '31',4: 'f',5: '47',6: 'v',7: '63',8: '/'},
 ]
 
-const tableData1: TableDemo[] = [
-  {1: 'ASCII 编码',2: '77',3: '97',4: '110'}
+const tableDemoData: TableDemo[] = [
+  {1: '文本',4: 'M',12 : 'a',20 : 'n'},
+  {1: 'ASCII 编码',4: '77',12 : '97',20 : '110'},
+  {1: '二进制位',2: '',3: '',4: '0',5 : '1',6 : '0',7 : '0',8 : '1',9 : '1',10 : '0',11 : '1',12 : '0',13 : '1',14 : '1',15 : '0',16 : '0',17 : '0',18 : '0',19 : '1',20 : '0',21 : '1',22 : '1',23 : '0',24 : '1',25 : '1',26 : '1',27 : '0'},
+  {1: '索引',4: '19',10 : '22',16 : '5',22 : '46'},
+  {1: 'Base64 编码',4: 'T',10 : 'W',16 : 'F',22 : 'u'},
 ]
 </script>
 
