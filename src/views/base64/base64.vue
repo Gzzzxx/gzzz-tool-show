@@ -321,7 +321,7 @@ const tableDemoData: TableDemo[] = [
 }
 
 :deep(.cell) {
-  // color: #407CB9;
+  color: #8c9299;
   font-weight: 600;
 }
 </style>
