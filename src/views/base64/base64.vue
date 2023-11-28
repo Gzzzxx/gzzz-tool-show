@@ -101,7 +101,9 @@
         <div class="text_style">
           <el-text tag="b">Man is distinguished, not only by his reason, but by this singular passion from other animals, which is a lust of the mind, that by a perseverance of delight in the continued and indefatigable generation of knowledge, exceeds the short vehemence of any carnal pleasure.</el-text>
         </div>
-        <el-text>使用 Base64 编码之后变成：</el-text>
+        <el-text>使用</el-text>
+        <el-text type="primary"> Base64 </el-text>
+        <el-text>编码之后变成：</el-text>
         <br/>
         <div class="text_style">
           <el-text tag="b">TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlzIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1c3Qgb2YgdGhlIG1pbmQsIHRoYXQgYnkgYSBwZXJzZXZlcmFuY2Ugb2YgZGVsaWdodCBpbiB0aGUgY29udGludWVkIGFuZCBpbmRlZmF0aWdhYmxlIGdlbmVyYXRpb24gb2Yga25vd2xlZGdlLCBleGNlZWRzIHRoZSBzaG9ydCB2ZWhlbWVuY2Ugb2YgYW55IGNhcm5hbCBwbGVhc3VyZS4=</el-text>
@@ -319,7 +321,7 @@ const tableDemoData: TableDemo[] = [
 }
 
 :deep(.cell) {
-  color: #407CB9;
+  // color: #407CB9;
   font-weight: 600;
 }
 </style>
