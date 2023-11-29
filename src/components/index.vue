@@ -8,7 +8,7 @@
   /> -->
 
   <div class="inner">
-    <p class="tts">Gross the stars over the moon to meet your betterself</p>
+    <p class="tts">Cross the stars over the moon to meet your better self</p>
   </div>
 
 </template>
@@ -34,20 +34,26 @@
 
   /* font-family: monospace; */
   overflow: hidden;
+  /* 使用右边框作为打印的指针光标 */
   border-right: .15em solid orange;
+  /* 要设置不允许换行，且溢出隐藏 */
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .15em;
+  /* 加上两个动画，一个是打字动画，使用steps让字一个一个的出现，
+  注意step和字数保持一致，然后多一步用来丢弃，光标动画也是同理 */
   animation: typing 5s steps(42, end),blink-caret .5s step-end infinite;
 }
 
+/**打字机动画 */
 @keyframes typing {
   from { width: 0 }
   to { width: 42em }
 }
 
+/**光标动画 */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: orange;}
+  50% { border-color: orange }
 }
 </style>
