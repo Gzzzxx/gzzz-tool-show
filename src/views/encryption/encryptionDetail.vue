@@ -45,8 +45,8 @@
         </el-form-item>
         <el-button type="success" class="bu" @click="encrypt()">加密</el-button>
         <el-button type="info" class="bu" @click="decrypt()">解密</el-button>
-        <el-button @click="copyData()" class="bu">复制结果</el-button>
-        <el-button @click="clear()" class="bu" style="margin-bottom:0 !important;">清空</el-button> 
+        <el-button class="bu" @click="copyData()">复制结果</el-button>
+        <el-button class="bu" @click="clear()" style="margin-bottom:0 !important;">清空</el-button> 
       </el-col>
     </el-row>
     <el-row style="margin:20px 0 0px 0px;text-align: left;">
