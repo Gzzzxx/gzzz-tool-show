@@ -23,7 +23,7 @@
       </el-menu-item>
     </el-menu>
   </el-affix>
-  <el-backtop :right="20" :bottom="100" />
+  <el-backtop :bottom="100" />
 </template>
 
 <script lang="ts" setup>
