@@ -64,10 +64,10 @@ export default defineConfig({
   ],
   server: {
     host: '0.0.0.0',
-    port: 9000, // port,
+    port: 1000, // port,
     proxy: {
       '/art': {
-        target: 'http://192.168.229.20:8080',
+        target: 'http://localhost:8080',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/art/, ""),
       }
