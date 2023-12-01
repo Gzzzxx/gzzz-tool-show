@@ -177,7 +177,7 @@ function decode() {
 function copyData() {
   navigator.clipboard.writeText(form.result).then(() => {
     ElMessage.success({message: '复制成功'})
-});
+  });
 }
 
 function clear() {
