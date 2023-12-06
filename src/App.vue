@@ -6,7 +6,7 @@
       <div class="flex main-container">
         <!-- <BaseSide /> -->
         <div w="full" py="4">
-          <router-view></router-view>
+          <router-view :key="$router.currentRoute.value.fullPath"></router-view>
         </div>
       </div>
     </el-config-provider>

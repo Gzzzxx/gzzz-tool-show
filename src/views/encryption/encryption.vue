@@ -1,10 +1,10 @@
 <template>
   <div style="padding: 0px 21% 0px 21%;">
     <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
-      <el-tab-pane label="SM4" name="first">
+      <el-tab-pane label="SM4" name="SM4">
         <detail :algorithm="algorithm"/>
       </el-tab-pane>
-      <el-tab-pane label="AES" name="second">
+      <el-tab-pane label="AES" name="AES">
         <detail :algorithm="algorithm"/>
       </el-tab-pane>
     </el-tabs>
@@ -13,11 +13,16 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useRouter } from "vue-router";
 import detail from './encryptionDetail.vue'
 
-const activeName = ref('first')
+const router = useRouter();
 
-let algorithm = "SM4";
+const par = router.currentRoute.value.params.id
+
+const activeName = ref(par)
+
+let algorithm = par;
 
 const handleClick = (tab: any) => {
     algorithm = tab.props.label

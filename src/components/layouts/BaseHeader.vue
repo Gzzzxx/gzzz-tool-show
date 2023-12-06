@@ -9,9 +9,13 @@
         />
       </el-menu-item>
       <div class="flex-grow" />
-      <el-menu-item index="2" @click="handleChange(2)">加密/解密</el-menu-item>
-      <el-menu-item index="3" @click="handleChange(3)">JSON格式化</el-menu-item>
-      <el-menu-item index="4" @click="handleChange(4)">Base64转换</el-menu-item>
+      <el-sub-menu index="2">
+        <template #title>加密/解密</template>
+        <el-menu-item index="2-1" @click="handleChange(2)">SM4 加密/解密</el-menu-item>
+        <el-menu-item index="2-2" @click="handleChange(3)">AES 加密/解密</el-menu-item>
+      </el-sub-menu>
+      <el-menu-item index="3" @click="handleChange(4)">JSON格式化</el-menu-item>
+      <el-menu-item index="4" @click="handleChange(5)">Base64转换</el-menu-item>
       <el-menu-item h="full">
         <button
           class="border-none w-full bg-transparent cursor-pointer"
@@ -37,12 +41,15 @@ const handleChange = (_val: any) => {
     router.push("/");
   }
   if (_val == 2) {
-    router.push("/encryption");
+    router.push("/encryption/SM4");
   }
   if (_val == 3) {
-    router.push("/format");
+    router.push("/encryption/AES");
   }
   if (_val == 4) {
+    router.push("/format");
+  }
+  if (_val == 5) {
     router.push("/base64");
   }
 };
@@ -114,6 +121,10 @@ const toggleTheme = (event: MouseEvent) => {
 
 ::view-transition-new(root) {
   z-index: 1;
+}
+
+.ep-menu--popup {
+  min-width: 120px;
 }
 
 </style>
