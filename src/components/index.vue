@@ -10,7 +10,11 @@
   <div class="inner">
     <p class="tts">Cross the stars over the moon to meet your better self</p>
   </div>
-
+  
+  <footer>
+    <el-link style="color: #4f4f4f;" href="http://www.baidu.com">备案号</el-link>
+  </footer>
+  
 </template>
 
 <script setup lang="ts">
@@ -19,7 +23,7 @@
 
 <style>
 .inner {
-  height: 80%;
+  min-height: calc(100vh - 100px);
   position: relative;
 }
 

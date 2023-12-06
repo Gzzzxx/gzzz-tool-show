@@ -1,16 +1,43 @@
 <template>
-  <el-config-provider namespace="ep">
-    <BaseHeader />
-    <div class="flex main-container">
-      <!-- <BaseSide /> -->
-      <div w="full" py="4">
-        <!-- <Logos my="4" /> -->
-        <router-view></router-view>
-        <!-- <HelloWorld msg="Hello Vue 3 + Element Plus + Vite" /> -->
+  <!-- <div :style="{ zoom: scaleva }"> -->
+  <div>
+    <el-config-provider namespace="ep">
+      <BaseHeader />
+      <div class="flex main-container">
+        <!-- <BaseSide /> -->
+        <div w="full" py="4">
+          <router-view></router-view>
+        </div>
       </div>
-    </div>
-  </el-config-provider>
+    </el-config-provider>
+  </div>
 </template>
+
+<script lang="ts">
+import { onMounted, ref } from '@vue/runtime-core'
+
+export default {
+  setup () {
+    const scaleva = ref()
+    const bodyScale = () => {
+      const devicewidth = document.documentElement.clientWidth// 获取当前分辨率下的可是区域宽度
+      const scale = devicewidth / 1920 // 分母——设计稿的尺寸
+      scaleva.value = scale
+    }
+    onMounted(() => {
+      bodyScale()
+      window.onresize = () => {
+        return (() => {
+          bodyScale()
+        })()
+      }
+    })
+    return {
+      scaleva,
+    }
+  }
+}
+</script>
 
 <style>
 #app {
