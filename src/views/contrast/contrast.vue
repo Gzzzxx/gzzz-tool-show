@@ -40,7 +40,7 @@
       </el-col>
     </el-row>
   </el-form>
-  <el-row :gutter="20" style="margin:0px 10px 0px 10px">
+  <el-row :gutter="20" style="margin: 0px 10px 0px 10px">
     <el-col :span="12">
       <el-input v-model="form.prev" placeholder="待对比 ..." type="textarea" :rows="8" resize='none'></el-input>
     </el-col>
@@ -48,7 +48,7 @@
       <el-input v-model="form.current" placeholder="当前的 ..." type="textarea" :rows="8" resize='none'></el-input>
     </el-col>
   </el-row>
-  <el-row style="margin:1rem 20px 0px 20px">
+  <el-row style="margin: 1rem 20px 0px 20px">
     <Diff
       id="diff"
       :mode="form.mode"
@@ -70,9 +70,8 @@ const form = reactive({
   theme: "dark",
   prev: "",
   current: "",
-  folding: false
+  folding: false,
 });
-
 </script>
 
 <style lang="scss" scoped>

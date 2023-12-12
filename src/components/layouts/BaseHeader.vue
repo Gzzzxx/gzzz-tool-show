@@ -16,7 +16,10 @@
       </el-sub-menu>
       <el-menu-item index="3" @click="handleChange(4)">JSON格式化</el-menu-item>
       <el-menu-item index="4" @click="handleChange(5)">Base64转换</el-menu-item>
-      <el-menu-item index="5" @click="handleChange(6)">代码对比</el-menu-item>
+      <el-sub-menu index="5">
+        <template #title>其他工具</template>
+        <el-menu-item index="5-1" @click="handleChange(6)">代码对比</el-menu-item>
+      </el-sub-menu>
       <el-menu-item index="0" h="full">
         <button
           class="border-none w-full bg-transparent cursor-pointer"
