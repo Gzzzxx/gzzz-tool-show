@@ -20,6 +20,11 @@ const routes = [
         path: '/base64',
         name: 'base64',
         component: () => import('../views/base64/base64.vue')
+    },
+    {
+        path: '/contrast',
+        name: 'contrast',
+        component: () => import('../views/contrast/contrast.vue')
     }
 ]
 export const router = createRouter({

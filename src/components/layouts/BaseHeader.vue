@@ -16,7 +16,8 @@
       </el-sub-menu>
       <el-menu-item index="3" @click="handleChange(4)">JSON格式化</el-menu-item>
       <el-menu-item index="4" @click="handleChange(5)">Base64转换</el-menu-item>
-      <el-menu-item h="full">
+      <el-menu-item index="5" @click="handleChange(6)">代码对比</el-menu-item>
+      <el-menu-item index="0" h="full">
         <button
           class="border-none w-full bg-transparent cursor-pointer"
           style="height: var(--ep-menu-item-height)"
@@ -52,6 +53,9 @@ const handleChange = (_val: any) => {
   if (_val == 5) {
     router.push("/base64");
   }
+  if (_val == 6) {
+    router.push("/contrast");
+  }
 };
 
 useDark();
@@ -70,6 +74,16 @@ const toggleTheme = (event: MouseEvent) => {
     isDark = root.classList.contains('dark')
     root.classList.remove(isDark ? 'dark' : 'light')
     root.classList.add(isDark ? 'light' : 'dark')
+
+    // 代码对比插件主题切换
+    const d = document.getElementById('diff')
+    if (d != null) {
+      if (isDark) {
+        d.className = 'vue-diff-wrapper vue-diff-mode-split vue-diff-theme-light'
+      } else {
+        d.className = 'vue-diff-wrapper vue-diff-mode-split vue-diff-theme-dark'
+      }
+    }
   })
 
   transition.ready.then(() => {
