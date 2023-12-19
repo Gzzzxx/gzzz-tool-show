@@ -12,7 +12,7 @@
   </div>
   
   <footer>
-    <el-link style="color: #4f4f4f;" href="http://www.baidu.com">备案号</el-link>
+    <el-link style="color: #4f4f4f;" href="https://beian.miit.gov.cn/">京ICP备2023038054号</el-link>
   </footer>
   
 </template>
