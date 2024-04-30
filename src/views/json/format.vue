@@ -2,6 +2,8 @@
 
 import { ref, computed } from 'vue';
 import JsonPreview from '../../components/json/JsonPreview.vue';
+import JsonEditorVue from 'json-editor-vue'
+import 'vanilla-jsoneditor/themes/jse-theme-dark.css'
 
 const text = ref('');
 
@@ -69,9 +71,19 @@ function copyJson() {
         />
       </div>
       <div>
-        <JsonPreview
+        <!-- <JsonPreview
           :json="text"
           class="json-preview"
+        /> -->
+        <JsonEditorVue
+          id="JsonEditorVue"
+          class="my-json-editor jse-theme-dark"
+          mode="text"
+          v-model="text"
+          v-bind="{/* local props & attrs */}"
+          :navigationBar="false"
+          :readOnly="true"
+          :askToFormat="false"
         />
       </div>
     </div>

@@ -78,6 +78,16 @@ const toggleTheme = (event: MouseEvent) => {
     root.classList.remove(isDark ? 'dark' : 'light')
     root.classList.add(isDark ? 'light' : 'dark')
 
+    // JsonEditorVue插件主题切换
+    const j = document.getElementById('JsonEditorVue')
+    if (j != null) {
+      if (isDark) {
+      j.className = 'my-json-editor'
+    } else {
+      j.className = 'my-json-editor jse-theme-dark'
+    }
+    }
+  
     // 代码对比插件主题切换
     const d = document.getElementById('diff')
     if (d != null) {
