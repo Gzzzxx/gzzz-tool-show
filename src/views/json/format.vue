@@ -81,7 +81,8 @@ function copyJson() {
           mode="text"
           v-model="text"
           v-bind="{/* local props & attrs */}"
-          :navigationBar="false"
+          :mainMenuBar="true"
+          :navigationBar="true"
           :readOnly="true"
           :askToFormat="false"
         />
