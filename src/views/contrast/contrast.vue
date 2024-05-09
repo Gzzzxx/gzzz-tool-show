@@ -22,7 +22,7 @@
           </el-select>
         </el-form-item>
       </el-col>
-      <el-col :span="3">
+      <!-- <el-col :span="3">
         <el-form-item label="主题">
           <el-select v-model="form.theme" style="width: 120px">
             <el-option label="dark" value="dark" />
@@ -30,7 +30,7 @@
             <el-option label="custom" value="custom" />
           </el-select>
         </el-form-item>
-      </el-col>
+      </el-col> -->
       <el-col :span="3">
         <el-form-item>
           <el-tooltip placement="top" content="折叠未更改区域">
