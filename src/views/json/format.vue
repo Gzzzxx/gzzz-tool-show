@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import JsonPreview from '../../components/json/JsonPreview.vue';
 import JsonEditorVue from 'json-editor-vue'
 import 'vanilla-jsoneditor/themes/jse-theme-dark.css'
@@ -20,6 +20,21 @@ const strings = ref({
     reduce: '压缩',
     format: '格式化',
   },
+});
+
+onMounted(() => {
+  let isDark: boolean
+
+  const root = document.documentElement
+  isDark = root.classList.contains('dark')
+  const j = document.getElementById('JsonEditorVue')
+  if (j != null) {
+    if (isDark) {
+      j.className = 'my-json-editor jse-theme-dark'
+    } else {
+      j.className = 'my-json-editor'
+    }
+  }
 });
 
 const local = computed(() => {

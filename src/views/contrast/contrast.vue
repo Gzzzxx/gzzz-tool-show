@@ -62,7 +62,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
 
 const form = reactive({
   type: "javascript",
@@ -71,6 +71,21 @@ const form = reactive({
   prev: "",
   current: "",
   folding: false,
+});
+
+onMounted(() => {
+  let isDark: boolean
+
+  const root = document.documentElement
+  isDark = root.classList.contains('dark')
+  const d = document.getElementById('diff')
+  if (d != null) {
+    if (isDark) {
+      d.className = 'vue-diff-wrapper vue-diff-mode-split vue-diff-theme-dark'
+    } else {
+      d.className = 'vue-diff-wrapper vue-diff-mode-split vue-diff-theme-light'
+    }
+  }
 });
 </script>
 
