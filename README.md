@@ -21,7 +21,7 @@ npm run dev
 npm run build
 ```
 
-![输入图片说明](image1.png)
-![输入图片说明](image2.png)
-![输入图片说明](image3.png)
-![输入图片说明](image4.png)
+|         |         |
+|---------|---------|
+| ![Image 1](/src/img/image1.png) | ![Image 2](/src/img/image2.png) |
+| ![Image 3](/src/img/image3.png) | ![Image 4](/src/img/image4.png) |
