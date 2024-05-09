@@ -1,42 +1,27 @@
 # 在线常用小工具
 
-> A starter kit for Element Plus with Vite
+一个在线小工具，包含SM4、AES等算法加解密、json格式化、base64转换、代码对比等功能。支持明亮、暗黑两种主题，页面美观。
+持续开发中，后续功能，敬请期待。
 
-- Preview: <https://vite-starter.element-plus.org>
-
-This is an example of on-demand element-plus with [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components).
-
-> If you want to import all, it may be so simple that no examples are needed. Just follow [quickstart | Docs](https://element-plus.org/zh-CN/guide/quickstart.html) and import them.
-
-If you just want an on-demand import example `manually`, you can check [unplugin-element-plus/examples/vite](https://github.com/element-plus/unplugin-element-plus/tree/main/examples/vite).
-
-## Project setup
+## 项目安装
 
 ```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 项目启动
 
 ```bash
 npm run dev
 ```
 
-### Compiles and minifies for production
+### 项目打包
 
 ```bash
 npm run build
 ```
 
-## Usage
-
-```bash
-git clone https://github.com/element-plus/element-plus-vite-starter
-cd element-plus-vite-starter
-npm i
-npm run dev
-```
-
-### Custom theme
-
-See `src/styles/element/index.scss`.
+![加解密](image.png)
+![json格式化](image.png)
+![base64转换](image.png)
+![代码对比](image.png)
