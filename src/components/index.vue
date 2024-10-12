@@ -8,7 +8,13 @@
   /> -->
 
   <div class="inner">
-    <p class="tts">Cross the stars over the moon to meet your better self</p>
+    <h1>程序开发常用工具</h1>
+    <p>SM4加解密 / AES加解密 / json格式化 / base64转换 / 代码对比 ...</p>
+    <p>关注我们 . 给我们 Star . 感谢您的支持！</p>
+    <p align="center">
+      <a href="https://github.com/Gzzzxx/gzzz-tool-show"><img src="https://img.shields.io/badge/GitHub-Gzzzxx-blue?logo=github" /></a>
+      <a style="padding-left: 10px;" href="https://gitee.com/gzzz-art/gzzz-tool-show"><img src="https://img.shields.io/badge/Gitee-gzzz_art-blue?logo=gitee" /></a>
+    </p>
   </div>
   
   <footer>
@@ -23,41 +29,7 @@
 
 <style>
 .inner {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 120px);
   position: relative;
-}
-
-.tts {
-  font-family: 'CUSTOM';
-  font-size: 16px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  /* font-weight: bold; */
-
-  /* font-family: monospace; */
-  overflow: hidden;
-  /* 使用右边框作为打印的指针光标 */
-  border-right: .15em solid orange;
-  /* 要设置不允许换行，且溢出隐藏 */
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  /* 加上两个动画，一个是打字动画，使用steps让字一个一个的出现，
-  注意step和字数保持一致，然后多一步用来丢弃，光标动画也是同理 */
-  animation: typing 5s steps(42, end),blink-caret .5s step-end infinite;
-}
-
-/**打字机动画 */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 42em }
-}
-
-/**光标动画 */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
 }
 </style>
