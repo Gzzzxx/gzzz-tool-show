@@ -31,9 +31,9 @@ npm run build
 ...
 
 此项目加解密需调用后端服务，后端服务地址
-> Gitee：https://gitee.com/gzzz-art/gzzz-tool
+> Gitee：https://gitee.com/gzzzxx/gzzz-tool
 
-> GitHub：https://github.com/Gzzzxx/gzzz-tool
+> GitHub：https://github.com/gzzzxx/gzzz-tool
 
 |         |         |
 |---------|---------|
