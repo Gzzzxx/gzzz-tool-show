@@ -9,7 +9,7 @@
 
   <div class="inner">
     <h1>程序开发常用工具</h1>
-    <p>SM4加解密 / AES加解密 / json格式化 / base64转换 / 代码对比 ...</p>
+    <p>SM4加解密 / AES加解密 / JSON格式化 / Base64转换 / 代码对比 ...</p>
     <span>如果对您有帮助，请将其分享给您的朋友，给我们 </span><span color="#e3b341">⭐ Star</span> 。<span>感谢您的支持！</span>
     <p align="center">
       <a href="https://github.com/gzzzxx/gzzz-tool-show"><img src="https://img.shields.io/badge/GitHub-gzzzxx-blue?logo=github" /></a>
@@ -27,10 +27,10 @@
           <el-button type="primary" text bg @click="aes()">AES加解密</el-button>
         </el-col>
         <el-col :span="6">
-          <el-button type="primary" text bg @click="json()">json格式化</el-button>
+          <el-button type="primary" text bg @click="json()">JSON格式化</el-button>
         </el-col>
         <el-col :span="6">
-          <el-button type="primary" text bg @click="base64()">base64转换</el-button>
+          <el-button type="primary" text bg @click="base64()">Base64转换</el-button>
         </el-col>
       </el-row>
       <el-row style="width: 60%;margin-top: 20px;">
