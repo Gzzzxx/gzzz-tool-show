@@ -37,6 +37,9 @@
         <el-col :span="6">
           <el-button type="primary" text bg @click="contrast()">代码对比</el-button>
         </el-col>
+        <el-col :span="6">
+          <el-button type="primary" text bg @click="calendar()">日历</el-button>
+        </el-col>
       </el-row>
     </div>
   </div>
@@ -64,6 +67,9 @@ const base64 = () => {
 }
 const contrast = () => {
   router.push("/contrast");
+}
+const calendar = () => {
+  router.push("/calendar");
 }
 </script>
 
