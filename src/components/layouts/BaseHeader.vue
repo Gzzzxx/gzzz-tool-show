@@ -19,8 +19,9 @@
       <el-sub-menu index="5">
         <template #title>其他工具</template>
         <el-menu-item index="5-1" @click="handleChange(6)">代码对比</el-menu-item>
+        <el-menu-item index="5-2" @click="handleChange(7)">日历</el-menu-item>
       </el-sub-menu>
-      <el-menu-item index="0" h="full">
+      <el-menu-item index="0" h="full" class="s-icon">
         <button
           class="border-none w-full bg-transparent cursor-pointer"
           style="height: var(--ep-menu-item-height)"
@@ -58,6 +59,9 @@ const handleChange = (_val: any) => {
   }
   if (_val == 6) {
     router.push("/contrast");
+  }
+  if (_val == 7) {
+    router.push("/calendar");
   }
 };
 
@@ -122,8 +126,8 @@ const toggleTheme = (event: MouseEvent) => {
 }
 
 .el-menu-demo {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
   backdrop-filter: saturate(50%) blur(4px);
 }
 
@@ -154,4 +158,7 @@ const toggleTheme = (event: MouseEvent) => {
   min-width: 120px;
 }
 
+.s-icon {
+  padding: 5px;
+}
 </style>

@@ -25,6 +25,11 @@ const routes = [
         path: '/contrast',
         name: 'contrast',
         component: () => import('../views/contrast/contrast.vue')
+    },
+    {
+        path: '/calendar',
+        name: 'calendar',
+        component: () => import('../views/calendar/calendar.vue')
     }
 ]
 export const router = createRouter({
