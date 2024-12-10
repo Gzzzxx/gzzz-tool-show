@@ -71,8 +71,12 @@ function solarToLunar(slotData) {
 :deep(.ep-calendar__body) {
   padding: 0;
 }
-// 
+// 周末添加背景色
 :deep(.ep-calendar-table .current:nth-last-child(-n+2)) {
   background: var(--ep-fill-color-light);
+}
+
+:deep(.ep-button-group) {
+  display: flex;
 }
 </style>
