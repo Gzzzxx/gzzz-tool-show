@@ -1,7 +1,7 @@
 <template>
   <!-- <div :style="{ zoom: scaleva }"> -->
   <div>
-    <el-config-provider namespace="ep">
+    <el-config-provider namespace="ep" :locale="zhCn">
       <BaseHeader />
       <div class="flex main-container">
         <!-- <BaseSide /> -->
@@ -15,9 +15,11 @@
 
 <script lang="ts">
 import { onMounted, ref } from '@vue/runtime-core'
+import lang from 'element-plus/es/locale/lang/zh-cn'
 
 export default {
   setup () {
+    const zhCn = lang;
     const scaleva = ref()
     const bodyScale = () => {
       const devicewidth = document.documentElement.clientWidth// 获取当前分辨率下的可是区域宽度
@@ -34,6 +36,7 @@ export default {
     })
     return {
       scaleva,
+      zhCn
     }
   }
 }

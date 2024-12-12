@@ -13,6 +13,7 @@
 
 <script lang="ts" setup>
 import calendar from '../../utils/js-calendar-converter.js';
+// 星期从周一开始
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 dayjs.locale('zh-cn');
