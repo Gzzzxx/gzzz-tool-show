@@ -33,7 +33,7 @@
       <div class="si">
         <div class="container">
           <label for="switch" class="toggle">
-            <input type="checkbox" class="input" id="switch" @click="toggleTheme" />
+            <input type="checkbox" class="input" id="switch" v-model="isCheck" @click="toggleTheme" />
             <div class="icon icon--moon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +77,8 @@ import { useDark } from "@vueuse/core";
 
 const router = useRouter();
 
+let isCheck = false;
+
 const handleChange = (_val: any) => {
   if (_val == 1) {
     router.push("/");
@@ -101,9 +103,30 @@ const handleChange = (_val: any) => {
   }
 };
 
-useDark();
+// 如果有存储的主题值，使用存储的，没有则默认暗黑模式
+if (localStorage.getItem("theme")) {
+  if (localStorage.getItem("theme") == "light") {
+    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.add('light')
+    isCheck = true
+  } else {
+    document.documentElement.classList.remove('light')
+    document.documentElement.classList.add('dark')
+    isCheck = false
+  }
+} else {
+  document.documentElement.classList.remove('light')
+  document.documentElement.classList.add('dark')
+}
 
 const toggleTheme = (event: MouseEvent) => {
+
+  // 存储选择的主题
+  if (document.documentElement.classList.contains('dark')) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
   
   const x = event.clientX
   const y = event.clientY
@@ -153,7 +176,7 @@ const toggleTheme = (event: MouseEvent) => {
         }
       )
     })
-  }, 500)
+  }, 600)
   
 }
 </script>
