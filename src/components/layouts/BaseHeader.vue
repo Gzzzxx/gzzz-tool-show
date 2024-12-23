@@ -175,6 +175,9 @@ const toggleTheme = (event: MouseEvent) => {
   padding-left: 5%;
   padding-right: 5%;
   backdrop-filter: saturate(50%) blur(4px);
+  background-size: 4px 4px;
+  background-image: radial-gradient(transparent 1px,var(--ep-bg-color) 1px);
+  background-color: transparent;
 }
 
 ::view-transition-old(root),
