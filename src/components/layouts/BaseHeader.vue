@@ -11,15 +11,15 @@
       <div class="flex-grow" />
       <el-sub-menu index="2">
         <template #title>加密/解密</template>
-        <el-menu-item index="2-1" @click="handleChange(2)">SM4 加密/解密</el-menu-item>
-        <el-menu-item index="2-2" @click="handleChange(3)">AES 加密/解密</el-menu-item>
+        <el-menu-item index="2-1" @click="handleChange('/encryption/SM4')">SM4 加密/解密</el-menu-item>
+        <el-menu-item index="2-2" @click="handleChange('/encryption/AES')">AES 加密/解密</el-menu-item>
       </el-sub-menu>
-      <el-menu-item index="3" @click="handleChange(4)">JSON格式化</el-menu-item>
-      <el-menu-item index="4" @click="handleChange(5)">Base64转换</el-menu-item>
+      <el-menu-item index="3" @click="handleChange('format')">JSON格式化</el-menu-item>
+      <el-menu-item index="4" @click="handleChange('base64')">Base64转换</el-menu-item>
       <el-sub-menu index="5">
         <template #title>其他工具</template>
-        <el-menu-item index="5-1" @click="handleChange(6)">代码对比</el-menu-item>
-        <el-menu-item index="5-2" @click="handleChange(7)">日历</el-menu-item>
+        <el-menu-item index="5-1" @click="handleChange('contrast')">代码对比</el-menu-item>
+        <el-menu-item index="5-2" @click="handleChange('calendar')">日历</el-menu-item>
       </el-sub-menu>
       <!-- <el-menu-item index="0" h="full" class="s-icon">
         <button
@@ -82,24 +82,8 @@ let isCheck = false;
 const handleChange = (_val: any) => {
   if (_val == 1) {
     router.push("/");
-  }
-  if (_val == 2) {
-    router.push("/encryption/SM4");
-  }
-  if (_val == 3) {
-    router.push("/encryption/AES");
-  }
-  if (_val == 4) {
-    router.push("/format");
-  }
-  if (_val == 5) {
-    router.push("/base64");
-  }
-  if (_val == 6) {
-    router.push("/contrast");
-  }
-  if (_val == 7) {
-    router.push("/calendar");
+  } else {
+    router.push(_val);
   }
 };
 
