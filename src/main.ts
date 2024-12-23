@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import './axios/index.js'
-import './assets/font/font.css'
+// import './assets/font/font.css'
 
 import VueDiff from 'vue-diff';
 import 'vue-diff/dist/index.css';
