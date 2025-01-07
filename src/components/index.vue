@@ -27,18 +27,18 @@
           <el-button type="primary" text bg @click="handleChange('/encryption/AES')">AES加解密</el-button>
         </el-col>
         <el-col :span="6">
-          <el-button type="primary" text bg @click="handleChange('format')">JSON格式化</el-button>
+          <el-button type="primary" text bg @click="handleChange('/format')">JSON格式化</el-button>
         </el-col>
         <el-col :span="6">
-          <el-button type="primary" text bg @click="handleChange('base64')">Base64转换</el-button>
+          <el-button type="primary" text bg @click="handleChange('/base64')">Base64转换</el-button>
         </el-col>
       </el-row>
       <el-row style="width: 60%;margin-top: 20px;">
         <el-col :span="6">
-          <el-button type="primary" text bg @click="handleChange('contrast')">代码对比</el-button>
+          <el-button type="primary" text bg @click="handleChange('/contrast')">代码对比</el-button>
         </el-col>
         <el-col :span="6">
-          <el-button type="primary" text bg @click="handleChange('calendar')">日历</el-button>
+          <el-button type="primary" text bg @click="handleChange('/calendar')">日历</el-button>
         </el-col>
       </el-row>
     </div>

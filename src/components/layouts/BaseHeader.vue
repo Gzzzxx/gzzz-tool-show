@@ -14,12 +14,12 @@
         <el-menu-item index="2-1" @click="handleChange('/encryption/SM4')">SM4 加密/解密</el-menu-item>
         <el-menu-item index="2-2" @click="handleChange('/encryption/AES')">AES 加密/解密</el-menu-item>
       </el-sub-menu>
-      <el-menu-item index="3" @click="handleChange('format')">JSON格式化</el-menu-item>
-      <el-menu-item index="4" @click="handleChange('base64')">Base64转换</el-menu-item>
+      <el-menu-item index="3" @click="handleChange('/format')">JSON格式化</el-menu-item>
+      <el-menu-item index="4" @click="handleChange('/base64')">Base64转换</el-menu-item>
       <el-sub-menu index="5">
         <template #title>其他工具</template>
-        <el-menu-item index="5-1" @click="handleChange('contrast')">代码对比</el-menu-item>
-        <el-menu-item index="5-2" @click="handleChange('calendar')">日历</el-menu-item>
+        <el-menu-item index="5-1" @click="handleChange('/contrast')">代码对比</el-menu-item>
+        <el-menu-item index="5-2" @click="handleChange('/calendar')">日历</el-menu-item>
       </el-sub-menu>
       <!-- <el-menu-item index="0" h="full" class="s-icon">
         <button
